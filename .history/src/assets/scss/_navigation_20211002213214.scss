@@ -1,0 +1,16 @@
+.Blog-Navigation {
+    height: 65px;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    color: $text-color;
+
+    ul {
+        height: 100%;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+        
+    }
+};
