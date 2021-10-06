@@ -41,8 +41,8 @@
             font-weight: 500;
             position: relative;
         };
-        .settings-dropDown-Menu-Card-true {
-            background-color: $settings-dropDown-Menu-Card-backGroundColor;
+        .settings-dropDown-Menu-Card {
+            background-color: #f8f8f8;
             position: absolute;
             display: flex;
             justify-content: center;
@@ -55,17 +55,13 @@
 
 
             .settings-dropDown-Menu {
-                background-color: $settings-dropDown-Menu-backGroundColor;
+                background-color: white;
                 height: 84%;
                 width: 94%;
                 border-radius: 7px;
                 box-sizing: border-box;
                 box-shadow: 0 9px 12px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
             };
-        };
-
-        .settings-dropDown-Menu-Card-false {
-            display: none;
         };
     };
 

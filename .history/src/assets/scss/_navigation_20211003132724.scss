@@ -12,7 +12,7 @@
         display: flex;
         align-items: center;
         margin-left: 30px;
-    };
+    }
 
     ul {
         height: 100%;
@@ -32,42 +32,24 @@
 
             &:hover {
                 color: $navigation-link-color-onHover;
-            };
+            }
 
-        };
+        }
 
         span {
             font-size: 24px;
             font-weight: 500;
             position: relative;
-        };
-        .settings-dropDown-Menu-Card-true {
-            background-color: $settings-dropDown-Menu-Card-backGroundColor;
+        }
+        .settings-dropDown-Menu-Card {
+            background-color: gray;
             position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80px;
-            width: 20%;
-            right: 1%;
-            top: 65px;
-            border-radius: 7px;
-
-
-            .settings-dropDown-Menu {
-                background-color: $settings-dropDown-Menu-backGroundColor;
-                height: 84%;
-                width: 94%;
-                border-radius: 7px;
-                box-sizing: border-box;
-                box-shadow: 0 9px 12px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-            };
-        };
-
-        .settings-dropDown-Menu-Card-false {
-            display: none;
-        };
-    };
+            height: 50px;
+            width: 25%;
+            right: 5%;
+            top: 0%;
+        }
+    }
 
     
 };

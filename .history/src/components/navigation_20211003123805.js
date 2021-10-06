@@ -17,19 +17,12 @@ const navigation_links = [
 ]
 
 export default function Navigation(){
-    const [settingsMenu, setSettingsMenu] = useState(false);
+    const [settingsMenu, setSettingsMenu] = useState('closed');
 
     function handleSettings() {
         setSettingsMenu(!settingsMenu);
         console.log(settingsMenu);
-    };
-
-    // useEffect(() => {
-    //     effect
-    //     return () => {
-    //         cleanup
-    //     }
-    // }, [input])
+    }
     return(
         
         <nav className='Blog-Navigation'>
@@ -43,13 +36,7 @@ export default function Navigation(){
                     ))
                 }
                 <span onClick={handleSettings}>Settings</span>
-                <div className={`settings-dropDown-Menu-Card-${settingsMenu}`}>
-                    <div className="settings-dropDown-Menu">
-                        hi!!!!!1
-                    </div>
-                </div>
             </ul>
-            
         </nav>
     )
 }

@@ -24,12 +24,12 @@ export default function Navigation(){
         console.log(settingsMenu);
     };
 
-    // useEffect(() => {
-    //     effect
-    //     return () => {
-    //         cleanup
-    //     }
-    // }, [input])
+    useEffect(() => {
+        effect
+        return () => {
+            cleanup
+        }
+    }, [input])
     return(
         
         <nav className='Blog-Navigation'>
@@ -43,7 +43,7 @@ export default function Navigation(){
                     ))
                 }
                 <span onClick={handleSettings}>Settings</span>
-                <div className={`settings-dropDown-Menu-Card-${settingsMenu}`}>
+                <div style={settingsMenu ? {display: "flex"} : {display: "none"}} className={`settings-dropDown-Menu-Card-${settingsMenu}`}>
                     <div className="settings-dropDown-Menu">
                         hi!!!!!1
                     </div>

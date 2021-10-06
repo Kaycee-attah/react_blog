@@ -42,7 +42,7 @@
             position: relative;
         };
         .settings-dropDown-Menu-Card-true {
-            background-color: $settings-dropDown-Menu-Card-backGroundColor;
+            background-color: #f8f8f8;
             position: absolute;
             display: flex;
             justify-content: center;
@@ -55,7 +55,7 @@
 
 
             .settings-dropDown-Menu {
-                background-color: $settings-dropDown-Menu-backGroundColor;
+                background-color: white;
                 height: 84%;
                 width: 94%;
                 border-radius: 7px;

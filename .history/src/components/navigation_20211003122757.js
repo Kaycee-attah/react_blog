@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const navigation_links = [
@@ -17,19 +17,6 @@ const navigation_links = [
 ]
 
 export default function Navigation(){
-    const [settingsMenu, setSettingsMenu] = useState(false);
-
-    function handleSettings() {
-        setSettingsMenu(!settingsMenu);
-        console.log(settingsMenu);
-    };
-
-    // useEffect(() => {
-    //     effect
-    //     return () => {
-    //         cleanup
-    //     }
-    // }, [input])
     return(
         
         <nav className='Blog-Navigation'>
@@ -42,14 +29,8 @@ export default function Navigation(){
                         </li>
                     ))
                 }
-                <span onClick={handleSettings}>Settings</span>
-                <div className={`settings-dropDown-Menu-Card-${settingsMenu}`}>
-                    <div className="settings-dropDown-Menu">
-                        hi!!!!!1
-                    </div>
-                </div>
+                <span>Settings</span>
             </ul>
-            
         </nav>
     )
 }
