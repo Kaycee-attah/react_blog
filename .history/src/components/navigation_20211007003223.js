@@ -52,7 +52,7 @@ export default function Navigation(){
                         <MdLightMode />
                         <label>
                             <input type="checkbox"/>
-                            <span onClick={() => setDarkMode(!darkMode)} className="check"></span>
+                            <span className="check"></span>
                         </label>
                         {/* <button onClick={() => setDarkMode(!darkMode)}>change</button> */}
                         <MdNightlight />

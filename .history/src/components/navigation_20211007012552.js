@@ -21,6 +21,7 @@ const navigation_links = [
 export default function Navigation(){
     const [settingsMenu, setSettingsMenu] = useState(false);
     const {darkMode, setDarkMode} = useContext(usersSelectedModeContext);
+    console.log(darkMode)
 
     function handleSettings() {
         setSettingsMenu(!settingsMenu);
@@ -50,9 +51,9 @@ export default function Navigation(){
                 <div className={`settings-dropDown-Menu-Card-${settingsMenu}`}>
                     <div className="settings-dropDown-Menu">
                         <MdLightMode />
-                        <label>
+                        <label onClick={() => setDarkMode(!darkMode)} >
                             <input type="checkbox"/>
-                            <span onClick={() => setDarkMode(!darkMode)} className="check"></span>
+                            <span className="check"></span>
                         </label>
                         {/* <button onClick={() => setDarkMode(!darkMode)}>change</button> */}
                         <MdNightlight />

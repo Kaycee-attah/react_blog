@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <div className={darkMode ? "App-darkMode" : "App-lightMode"}>
-        <usersSelectedModeContext.Provider value={{darkMode, setDarkMode}}>
+        <usersSelectedModeContext.Provider value="hello from context">
           <Navigation/>
           <Switch>
             <Route path="/:page" component={PageRenderer} />

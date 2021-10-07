@@ -21,6 +21,7 @@ const navigation_links = [
 export default function Navigation(){
     const [settingsMenu, setSettingsMenu] = useState(false);
     const {darkMode, setDarkMode} = useContext(usersSelectedModeContext);
+    console.log(darkMode)
 
     function handleSettings() {
         setSettingsMenu(!settingsMenu);

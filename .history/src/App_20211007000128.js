@@ -5,11 +5,11 @@ import PageRenderer from "./page-renderer";
 import {usersSelectedModeContext} from "./contexts/usersSelectedModeContext";
 
 function App() {
-  const [darkMode, setDarkMode] =useState(false)
+  const [darkMode, setDarkMode] =useState(true)
   return (
     <Router>
       <div className={darkMode ? "App-darkMode" : "App-lightMode"}>
-        <usersSelectedModeContext.Provider value={{darkMode, setDarkMode}}>
+        <usersSelectedModeContext.Provider>
           <Navigation/>
           <Switch>
             <Route path="/:page" component={PageRenderer} />

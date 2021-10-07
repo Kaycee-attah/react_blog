@@ -1,7 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { MdLightMode, MdNightlight, MdSettings } from "react-icons/md";
-import { usersSelectedModeContext } from "../contexts/usersSelectedModeContext";
+import { MdLightMode, MdNightlight } from "react-icons/md";
 
 const navigation_links = [
     {
@@ -20,10 +19,10 @@ const navigation_links = [
 
 export default function Navigation(){
     const [settingsMenu, setSettingsMenu] = useState(false);
-    const {darkMode, setDarkMode} = useContext(usersSelectedModeContext);
 
     function handleSettings() {
         setSettingsMenu(!settingsMenu);
+        console.log(settingsMenu);
     };
 
     // useEffect(() => {
@@ -44,17 +43,10 @@ export default function Navigation(){
                         </li>
                     ))
                 }
-                <span onClick={handleSettings}>
-                    <MdSettings />
-                </span>
+                <span onClick={handleSettings}>Settings</span>
                 <div className={`settings-dropDown-Menu-Card-${settingsMenu}`}>
                     <div className="settings-dropDown-Menu">
                         <MdLightMode />
-                        <label>
-                            <input type="checkbox"/>
-                            <span onClick={() => setDarkMode(!darkMode)} className="check"></span>
-                        </label>
-                        {/* <button onClick={() => setDarkMode(!darkMode)}>change</button> */}
                         <MdNightlight />
                     </div>
                 </div>

@@ -50,11 +50,7 @@ export default function Navigation(){
                 <div className={`settings-dropDown-Menu-Card-${settingsMenu}`}>
                     <div className="settings-dropDown-Menu">
                         <MdLightMode />
-                        <label>
-                            <input type="checkbox"/>
-                            <span onClick={() => setDarkMode(!darkMode)} className="check"></span>
-                        </label>
-                        {/* <button onClick={() => setDarkMode(!darkMode)}>change</button> */}
+                        <button onClick={() => setDarkMode(!darkMode)}>change</button>
                         <MdNightlight />
                     </div>
                 </div>
