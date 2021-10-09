@@ -1,0 +1,245 @@
+.Blog-Navigation {
+    height: 65px;
+    width: 100%;
+    background: $navigation-background-color;
+    display: flex;
+    justify-content: space-between;
+    color: $navigation-link-color;
+
+    .menu-title {
+        font-size: 24px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+    };
+
+    .menu-content-container {
+        display: flex;
+        align-items: center;
+        padding-right: 30px;
+        ul {
+            height: 100%;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-inline-start: 0;
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            margin-right: 20px;
+    
+            a {
+                text-decoration: none;
+                padding: 0 20px 0 20px;
+                font-size: 20px;
+                color: $navigation-link-color;
+    
+                &:hover {
+                    color: $navigation-link-color-onHover;
+                };
+    
+            };
+    
+            span {
+                font-size: 24px;
+                font-weight: 500;
+                position: relative;
+            };
+    
+            .settings-icon {
+                margin-top: 10px;
+            };
+
+            .more-icon {
+                display: none;
+            };
+    
+            .settings-dropDown-Menu-Card-true {
+                background-color: $settings-dropDown-Menu-Card-backGroundColor;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 150px;
+                width: 20%;
+                right: 1%;
+                top: 65px;
+                border-radius: 7px;
+    
+    
+                .settings-dropDown-Menu {
+                    background-color: $settings-dropDown-Menu-backGroundColor;
+                    height: 84%;
+                    width: 94%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    border-radius: 7px;
+                    box-sizing: border-box;
+                    box-shadow: 0 9px 12px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    
+                    .users-avatar {
+                        padding-top: 8px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        align-items: center;
+                        height: 60%;
+                        width: 100%;
+    
+                        .ant-avatar {
+                            border: 1px solid
+                        };
+                        .ant-avatar-icon {
+                            margin: 0;
+    
+                            .anticon {
+                                margin: 3.3px
+                            }
+                        }
+                        .users-avatar-name {
+                            font-size: 16.5px
+                        };
+                    };
+    
+                    .toggle-mode-wrapper {
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+    
+                        .toggle-mode-container {
+                            height: 100%;
+                            width: 80%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-around;
+                            align-items: center;
+                            border-top: 3px solid #f5f2f2;
+                            padding-top: 4px;
+    
+                            input[type="checkbox"] {
+                                -webkit-appearance: none;
+                                visibility: hidden;
+                                display: none;
+                            };
+            
+                            .check {
+                                position: relative;
+                                display: block;
+                                width: 40px;
+                                height: 20px;
+                                background: $toggle-checkbox-darkMode-backgroundColor;
+                                cursor: pointer;
+                                border-radius: 20px;
+                                overflow: hidden;
+                                transition: ease-in 0.5s
+                            };
+            
+                            input[type="checkbox"]:checked ~ .check {
+                                background: $input-type-checkbox-Checked;
+                            };
+            
+                            .check:before {
+                                content: "";
+                                position: absolute;
+                                top: 2px;
+                                left: 2px;
+                                background: $toggle-checkbox-lightMode-check-before-backgroundColor;
+                                width: 16px;
+                                height: 16px;
+                                border-radius: 50%;
+                                transition: 0.5s
+                            };
+            
+                            input[type="checkbox"]:checked ~ .check:before {
+                                transform: translateX(20px)
+                            };
+            
+                            .check::after {
+                                content: "";
+                                position: absolute;
+                                top: 2px;
+                                left: 2px;
+                                background: $toggle-checkbox-darkMode-check-after-backgroundColor;
+                                width: 16px;
+                                height: 16px;
+                                border-radius: 50%;
+                                transition: 0.5s;
+                                transform: translateX(-20px)
+                            };
+            
+                            input[type="checkbox"]:checked ~ .check::after {
+                                transform: translateX(20px)
+                            }
+                        };
+                    };
+                };
+            };
+    
+            .settings-dropDown-Menu-Card-false {
+                display: none;
+            };
+        };     
+    };
+
+    .menu-icon {
+        margin-top: 10px;
+        font-size: 33px;
+        display: none;
+        cursor: pointer
+    };
+
+};
+
+@media screen and (max-width: 900px) {
+    .Blog-Navigation {
+        justify-content: flex-start;
+
+        .menu-title {
+            margin-left: 0;
+        };
+        .more-icon {
+            display: flex;
+            font-size: 32px;
+            justify-content: flex-start;
+            align-items: center;
+        };
+
+        .menu-content-container {
+            width: 300px;
+            height: calc(100% - 65px);
+            background: $sideBar-backgroundColor;
+            position: absolute;
+            top: 65px;
+            left: -300px;
+            transition: 300ms ease left;
+            flex-direction: column-reverse;
+
+            &.active {
+                left: 0px; 
+            };
+
+            ul {
+                flex-direction: column;
+
+                .settings-icon {
+                    display: none;
+                };
+            };
+    
+        };
+        .menu-icon {
+            display: none;
+
+            &.active {
+                display: flex;
+                margin: 0;
+                justify-content: flex-end;
+                align-items: center
+            }
+        };
+    };
+};
