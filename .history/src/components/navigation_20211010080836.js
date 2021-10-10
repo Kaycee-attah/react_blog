@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import { IoIosMenu } from "react-icons/io"
 import { Sidebar } from "./Sidebar";
 import { sidebarContext } from "../contexts/sidebarContext";
@@ -19,12 +19,54 @@ export default function Navigation(){
     const { handleTouchStart } = useSwipe();
     const { handleTouchEnd } = useSwipe();
     const { handleTouchMove } = useSwipe();
-    const { dropDownMenuRef } = useClick();
+    const dropDownMenuRef = useClick();
+    const  sideBarRef = useClick();
 
     function handleMore() {
         setSettingsMenu(!settingsMenu);
     };
 
+    // const handleClickOutsideDropDown = useCallback(
+    //     (e) => {
+    //         if(dropDownMenuRef.current.contains(e.target)) {
+    //             return;
+    //         } else {
+    //             setSettingsMenu(false);
+    //         }
+    //     },
+    //     [setSettingsMenu],
+    // );
+
+    // const handleClickOutsideSideBar = useCallback(
+    //     (e) => {
+    //         if(sideBarRef.current.contains(e.target)) {
+    //             return;
+    //         } else {
+    //             setMenuActive(false);
+    //         }
+    //     },
+    //     [setMenuActive],
+    // );
+
+    // useEffect(() => {
+    //     // add when mounted
+    //     document.addEventListener("mousedown", handleClickOutsideSideBar);
+        
+    //     // return function to be called when unmounted
+    //     return () => {
+    //       document.removeEventListener("mousedown", handleClickOutsideSideBar);
+    //     }
+    // },[handleClickOutsideSideBar]);
+
+    // useEffect(() => {
+    //     // add when mounted
+    //     document.addEventListener("mousedown", handleClickOutsideDropDown);
+        
+    //     // return function to be called when unmounted
+    //     return () => {
+    //       document.removeEventListener("mousedown", handleClickOutsideDropDown);
+    //     }
+    // },[handleClickOutsideDropDown]);
     return(
         
         <nav onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} className='Blog-Navigation'>
@@ -54,7 +96,7 @@ export default function Navigation(){
                             </div>  
                         </div>
                     </div>
-            <Sidebar />
+            <Sidebar ref={sideBarRef}/>
         </nav>
     )
 }

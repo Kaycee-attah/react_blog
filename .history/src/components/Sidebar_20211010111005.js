@@ -29,6 +29,21 @@ export function Sidebar() {
     const {menuActive} = useContext(sidebarContext);
     const  { sideBarRef } = useClick();
 
+    // const handleClick = useCallback((e) => {
+    //     if (node1.current.contains(e.target)) {
+    //         setMenuActive(true);
+    //     };
+    //   },[setMenuActive]);
+
+    // useEffect(() => {
+    //     // add when mounted
+    //     document.addEventListener("touchstart", handleClick);
+    //     // return function to be called when unmounted
+    //     return () => {
+    //       document.removeEventListener("touchend", handleClick);
+    //     };
+    //   }, [handleClick]);
+
     function handleSettings() {
         setSettingsMenu(!settingsMenu);
     };

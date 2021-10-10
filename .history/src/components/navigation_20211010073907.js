@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import { IoIosMenu } from "react-icons/io"
 import { Sidebar } from "./Sidebar";
 import { sidebarContext } from "../contexts/sidebarContext";
 import { useSwipe } from "../contexts/swipeContext";
-import { useClick } from "../contexts/outsideCliksContext";
 import { AiOutlineMore } from "react-icons/ai";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { settingsContext } from "../contexts/settingsContext";
@@ -19,12 +18,32 @@ export default function Navigation(){
     const { handleTouchStart } = useSwipe();
     const { handleTouchEnd } = useSwipe();
     const { handleTouchMove } = useSwipe();
-    const { dropDownMenuRef } = useClick();
+    const dropDownMenuRef = useRef();
 
     function handleMore() {
         setSettingsMenu(!settingsMenu);
     };
 
+    const handleClickOutsideDropDown = useCallback(
+        (e) => {
+            if(dropDownMenuRef.current.contains(e.target)) {
+                return;
+            } else {
+                setSettingsMenu(false);
+            }
+        },
+        [],
+    );
+
+    useEffect(() => {
+        // add when mounted
+        document.addEventListener("mousedown", handleClickOutsideDropDown);
+        
+        // return function to be called when unmounted
+        return () => {
+          document.removeEventListener("mousedown", handleClickOutsideDropDown);
+        }
+    },[handleClickOutsideDropDown]);
     return(
         
         <nav onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} className='Blog-Navigation'>
