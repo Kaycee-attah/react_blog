@@ -1,0 +1,23 @@
+.home {
+    // background-color: black;
+    h1 {
+        width: 100%;
+        color: $text-color;
+    };
+
+    .featured-posts-container {
+        display: flex;
+        width: 100%;
+    };
+};
+
+@media screen and (max-width: 900px) {
+    .home {
+        margin-block-start: 1.5em;
+        margin-block-end: 1.5em;
+    };
+
+    .featured-posts-container {
+        flex-direction: column;
+    };
+}

@@ -1,0 +1,5 @@
+.masonry{
+    grid-template-columns: repeat(3, minmax(275px, 1fr));
+    display: grid;
+    gap: 30px;
+}

@@ -1,0 +1,12 @@
+.masonry{
+    grid-template-columns: repeat(3, minmax(275px, 1fr));
+    display: grid;
+    gap: 30px;
+};
+
+@media screen and (max-width: 900px) {
+    .masonry {
+        display: flex;
+        flex-direction: column;
+    }
+}

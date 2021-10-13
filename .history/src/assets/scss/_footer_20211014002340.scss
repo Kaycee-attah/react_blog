@@ -1,0 +1,52 @@
+.main-footer {
+    width: 100%;
+    height: auto;
+    background: $navigation-background-color;
+    color: $menu-content-container-a-color;
+    padding: 5px 10px;
+
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .footer-row {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            margin: 15px;
+            
+
+            col{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            ul, h4 {
+                margin: 0;
+            }
+
+            h4{
+                text-align: start;
+                font-size: 22px
+            };
+
+            ul{
+                padding: 0;
+                li{
+                    list-style-type: none
+                }
+            }
+            
+        };
+    };
+};

@@ -1,0 +1,19 @@
+.home {
+    background-color: black;
+    h2 {
+        width: 100%;
+        color: $text-color;
+    };
+
+    .masonry {
+        // background-color: black;
+        grid-template-columns: repeat(3, minmax(275px, 1fr));
+        display: grid;
+        grid-row-gap: 40px;
+        gap: 40px;
+        height: 100%;
+        width: 100%;
+        break-after: avoid
+        
+    };
+}
