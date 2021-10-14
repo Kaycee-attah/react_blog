@@ -207,6 +207,7 @@
 @media screen and (max-width: 900px) {
     .Blog-Navigation {
         color: $Blog-Navigation-text-color-for-smaller-screen-sizes;
+        position: fixed;
 
         .menu-icon {
             display: flex;
@@ -368,7 +369,7 @@
             width: 300px;
             height: calc(100% - 65px);
             background: $sideBar-backgroundColor;
-            position: fixed;
+            position: absolute;
             top: 65px;
             left: -300px;
             transition: 300ms ease left;

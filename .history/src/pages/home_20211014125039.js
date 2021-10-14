@@ -57,7 +57,6 @@ export default function Home() {
             </section>
             <section onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} className="container home" >
                 <div className="row">
-                    <h1>Recent Posts</h1>
                     <PostGrid posts={recentPosts} />
                 </div>
             </section>

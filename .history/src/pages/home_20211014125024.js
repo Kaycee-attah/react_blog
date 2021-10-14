@@ -1,7 +1,7 @@
 import React from 'react';
 import trending from '../assets/mocks/trending';
 import featured from '../assets/mocks/featured';
-import { MasonryPost, PostMasonry, PostGrid } from '../components/common';
+import { MasonryPost, PostMasonry } from '../components/common';
 import { useSwipe } from '../contexts/swipeContext';
 
 const trendingConfig = {
@@ -57,7 +57,6 @@ export default function Home() {
             </section>
             <section onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onTouchMove={handleTouchMove} className="container home" >
                 <div className="row">
-                    <h1>Recent Posts</h1>
                     <PostGrid posts={recentPosts} />
                 </div>
             </section>

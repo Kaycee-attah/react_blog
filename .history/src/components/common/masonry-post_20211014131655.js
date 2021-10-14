@@ -1,5 +1,5 @@
 import React from "react";
-import {TagRow} from "./";
+import TagRow from "./";
 
 export default function MasonryPost({ post, tagsOnTop, index }) {
     const imageBackground = { backgroundImage: `url("${require(`../../assets/images/${post.image}`).default}")` };
