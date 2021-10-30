@@ -1,0 +1,104 @@
+.main-footer {
+    width: 100%;
+    height: auto;
+    background: $footer-background-color;
+    color: $footer-texts-color;
+    padding: 5px 10px;
+    transition: all 2s ease-in-out;
+
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        .footer-row {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            margin: 15px;
+            
+
+            .col{
+                width: auto;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 10px;
+
+                ul, h4 {
+                    margin: 0;
+                }
+    
+                h4{
+                    text-align: start;
+                    font-size: 22px;
+                    width: auto;
+
+                };
+    
+                ul{
+                    padding: 0;
+                    li{
+                        list-style-type: none
+                    }
+                }
+            }
+
+            
+            .col-sm {
+                padding: 0 10px;
+            }
+        };
+
+        .live-chat-main-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            animation-name: bounce; 
+            animation-duration: 0.5s;
+            animation-direction: alternate;
+            animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+            animation-iteration-count: infinite;
+        };
+
+        .shadow {
+            position: absolute;
+            bottom: 4px;
+            right: 20px;
+            animation-name: bounce; 
+            animation-duration: 0.5s;
+            animation-direction: alternate;
+            animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+            animation-iteration-count: infinite;
+          }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-50%) ;
+            }
+        };
+
+        @keyframes grow {
+            from {
+              transform: scale(0.2, 0.5);								
+            }
+          
+            to {
+              transform: scale(1, 0.1);   
+            }
+        };
+    };
+};

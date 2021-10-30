@@ -1,0 +1,163 @@
+.article-main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+
+  .comments {
+    margin-top: 20px;
+
+    .comments-title {
+      font-size: 30px;
+      margin-bottom: 20px;
+    };
+
+    .comment-form-title {
+      font-size: 22px;
+    };
+
+    .comment-form-textarea {
+      width: 100%;
+      height: 80px;
+      margin-bottom: 8px;
+      margin-top: 8px;
+      border: 1px solid $article-main-container-comment-form-textarea-border-color;
+    }
+
+    textArea{
+      resize: none;
+      border-radius: 15px;
+      outline: none;
+      border: .7px solid $article-main-container-textarea-border-color;
+    }
+    
+    .comment-form-button {
+      font-size: 16px;
+      padding: 8px 16px;
+      background: $article-main-container-comment-form-button-background;
+      border-radius: 8px;
+      color: $article-main-container-comment-form-button-color;
+    }
+    
+    .comment-form-button:hover:enabled {
+      cursor: pointer;
+      background: $article-main-container-comment-form-button-onHover-background;
+    }
+    
+    .comment-form-button:disabled {
+      opacity: 0.7;
+      cursor: default;
+    }
+    
+    .comment-form-cancel-button {
+      margin-left: 10px;
+    }
+    
+    .comments-container {
+      margin-top: 40px;
+
+      .comment {
+        display: flex;
+        margin-bottom: 28px;
+        min-width: 100%;
+        // border-bottom: .5px solid;
+
+        .comment-image-container {
+          margin-right: 12px;
+
+          img{
+            border-radius: 50px;
+          };
+        };
+
+        .comment-right-part {
+          width: 100%;
+
+          .comment-content {
+            display: flex;
+            flex-direction: column;
+  
+            .comment-header {
+              display: flex;
+              // flex-direction: column;
+  
+              .comment-author {
+                margin-right: 8px;
+                font-size: 18px;
+                color: rgb(59, 130, 246);
+              };
+    
+              .comment-date{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center
+              }
+            };
+              
+            .comment-text {
+              font-size: 18px;
+            };
+
+            .comment-actions {
+              display: flex;
+              font-size: 12px;
+              color:  $article-main-container-comments-comments-container-comment-right-part-comment-content-comment-actions-color: rgb(51, 51, 51);;
+              cursor: pointer;
+              margin-top: 8px;
+            };
+
+            .replies-toggler {
+              width: 100%;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              position: relative;
+              cursor: pointer
+            };
+
+            .replies {
+              margin-top: 20px;
+            }
+
+            .replies-toggler::before{
+              content: '';
+              width: 50%;
+              height: .7px;
+              position: absolute;
+              background-color: #ccc;
+              top: 50%;
+              left: 79%
+            };
+
+            .replies-toggler::after{
+              content: '';
+              width: 50%;
+              height: .7px;
+              position: absolute;
+              background-color: #ccc;
+              top: 50%;
+              right: 79%;
+            };
+          };
+
+        };
+      
+      };
+
+      .comment-actions {
+        margin-bottom: 10px;
+
+        .comment-action {
+          margin-right: 8px;
+        };
+        
+        .comment-action:hover {
+          text-decoration: underline;
+        };
+      };
+    };
+  };    
+};

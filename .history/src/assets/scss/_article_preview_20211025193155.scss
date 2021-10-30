@@ -1,0 +1,55 @@
+.Article-Preview-Container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .Article-Preview-Action-Button-Container {
+        width: 100%;
+        height: 5vh;
+        margin-top: 75px;
+        padding: 0 20px;
+        
+        button{
+            width: 110px;
+            height: 45px;
+            background: linear-gradient(-45deg, #fff, #F1F1E6);
+            border: none;
+            outline: none;
+            color: #04befe;
+            border: 2px #04befe solid;
+            
+            cursor: pointer;
+        };
+
+        button:hover{
+            background: linear-gradient(-45deg, #4481eb, #04befe);
+            color: #fff;
+        };
+    };
+
+    .Article-Preview-Wrapper {
+        width: 100%;
+        min-height: 95vh;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img{
+            // position: relative;
+            // border-radius: 5px;
+            overflow: hidden;
+            object-fit: cover;
+            object-position: center center;
+            // height: 100%;
+            // width: 100%;
+            margin: 0 auto;
+            min-height: 200px;
+            max-height: 380px;
+        };
+    };
+};

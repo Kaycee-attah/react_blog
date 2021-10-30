@@ -1,0 +1,459 @@
+.Blog-Navigation {
+    height: 65px;
+    width: 100%;
+    background: $navigation-background-color;
+    display: flex;
+    justify-content: space-between;
+    // color: $navigation-link-color;
+    border-bottom: 1px solid $navbar-and-sidebar-border-color;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    transition: all ease-in-out 2s;
+
+    &.active {
+        background: $navigation-background-active-color;
+        transition: all ease-in-out 2s;
+    }
+
+    .more-icon {
+        display: none;
+    };
+
+    .more-icon-dropDown-Menu-Card-true {
+        display: none;
+    };
+
+    .more-icon-dropDown-Menu-Card-false {
+        display: none;
+    }
+
+    .menu-title {
+        font-size: 24px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+        color: $title-text-color;
+    };
+
+    .menu-content-container {
+        display: flex;
+        align-items: center;
+        padding-right: 30px;
+        ul {
+            height: 100%;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-inline-start: 0;
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            padding-right: 20px;
+    
+            a {
+                text-decoration: none;
+                padding: 0 20px 0 20px;
+                font-size: 20px;
+                color: $menu-content-container-a-color;
+    
+                &:hover {
+                    color: $menu-content-container-a-color-onHover;
+                };
+    
+            };
+    
+            .settings-icon {
+                margin-top: 10px;
+                font-size: 24px;
+                font-weight: 500;
+                position: relative;
+            };
+    
+            .settings-dropDown-Menu-Card-true {
+                background-color: $settings-dropDown-Menu-Card-backGroundColor;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 150px;
+                width: 30%;
+                right: 1%;
+                top: 70px;
+                border-radius: 7px;
+    
+    
+                .settings-dropDown-Menu {
+                    background-color: $settings-dropDown-Menu-backGroundColor;
+                    height: 84%;
+                    width: 94%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    border-radius: 7px;
+                    box-sizing: border-box;
+                    box-shadow: 0 9px 12px $settings-dropDown-Menu-border-color, 0 3px 6px $settings-dropDown-Menu-border-color;
+    
+                    .users-avatar {
+                        padding-top: 8px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        align-items: center;
+                        height: 60%;
+                        width: 100%;
+    
+                        .ant-avatar {
+                            border: 1px solid
+                        };
+                        .ant-avatar-icon {
+                            margin: 0;
+    
+                            .anticon {
+                                margin: 3.3px
+                            }
+                        }
+                        .users-avatar-name {
+                            font-size: 16.5px
+                        };
+                    };
+    
+                    .toggle-mode-wrapper {
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+    
+                        .toggle-mode-container {
+                            height: 100%;
+                            width: 80%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-around;
+                            align-items: center;
+                            border-top: 3px solid $toggle-mode-container-border-color;
+                            padding-top: 4px;
+    
+                            input[type="checkbox"] {
+                                -webkit-appearance: none;
+                                visibility: hidden;
+                                display: none;
+                            };
+            
+                            .check {
+                                position: relative;
+                                display: block;
+                                width: 40px;
+                                height: 20px;
+                                background: $toggle-checkbox-darkMode-backgroundColor;
+                                cursor: pointer;
+                                border-radius: 20px;
+                                overflow: hidden;
+                                transition: ease-in 0.5s
+                            };
+            
+                            input[type="checkbox"]:checked ~ .check {
+                                background: $input-type-checkbox-Checked;
+                            };
+            
+                            .check:before {
+                                content: "";
+                                position: absolute;
+                                top: 2px;
+                                left: 2px;
+                                background: $toggle-checkbox-lightMode-check-before-backgroundColor;
+                                width: 16px;
+                                height: 16px;
+                                border-radius: 50%;
+                                transition: 0.5s
+                            };
+            
+                            input[type="checkbox"]:checked ~ .check:before {
+                                transform: translateX(20px)
+                            };
+            
+                            .check::after {
+                                content: "";
+                                position: absolute;
+                                top: 2px;
+                                left: 2px;
+                                background: $toggle-checkbox-darkMode-check-after-backgroundColor;
+                                width: 16px;
+                                height: 16px;
+                                border-radius: 50%;
+                                transition: 0.5s;
+                                transform: translateX(-20px)
+                            };
+            
+                            input[type="checkbox"]:checked ~ .check::after {
+                                transform: translateX(20px)
+                            }
+                        };
+                    };
+                };
+            };
+    
+            .settings-dropDown-Menu-Card-false {
+                display: none;
+            };
+        };     
+    };
+
+    .menu-icon {
+        margin-top: 10px;
+        font-size: 33px;
+        display: none;
+        cursor: pointer
+    };
+
+};
+
+@media screen and (max-width: 900px) {
+    .Blog-Navigation {
+        color: $Blog-Navigation-text-color-for-smaller-screen-sizes;
+        // border-bottom: none;
+
+        .menu-icon {
+            display: flex;
+            margin-left: 10px;
+            margin-top: 0;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+            color: $menu-icon-text-color-for-smaller-screen-sizes;
+        };
+
+        .menu-title {
+            margin-left: 0;
+
+            
+        };
+        .more-icon {
+            display: flex;
+            font-size: 32px;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            position: relative;
+            cursor: pointer;
+            margin-right: 10px;
+            color: $more-icon-text-color-for-smaller-screen-sizes;
+        };
+
+        .more-icon-dropDown-Menu-Card-true {
+            background-color: $more-icon-dropDown-Menu-Card-true-background-color-for-smaller-screen-sizes;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            width: 60%;
+            right: 1%;
+            top: 70px;
+            border-radius: 7px;
+            border: 1px solid $toggle-mode-container-border-top-color-for-smaller-screen-sizes;
+            // box-shadow: 0 9px 12px $more-icon-dropDown-Menu-Card-box-shadow-color-for-smaller-screen-sizes, 0 3px 6px $more-icon-dropDown-Menu-Card-box-shadow-color-for-smaller-screen-sizes;
+
+
+            .more-icon-dropDown-Menu {
+                background-color: $more-icon-dropDown-Menu-Card-background-color-for-smaller-screen-sizes;
+                height: 98%;
+                width: 99%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                border-radius: 7px;
+                box-sizing: border-box;
+                
+
+                .users-avatar {
+                    padding-top: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    height: 60%;
+                    width: 100%;
+
+                    .ant-avatar {
+                        border: 1px solid
+                    };
+                    .ant-avatar-icon {
+                        margin: 0;
+
+                        .anticon {
+                            margin: 3.3px
+                        }
+                    }
+                    .users-avatar-name {
+                        font-size: 16.5px
+                    };
+                };
+
+                .toggle-mode-wrapper {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .toggle-mode-container {
+                        height: 100%;
+                        width: 80%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        align-items: center;
+                        border-top: .9px solid $toggle-mode-container-border-top-color-for-smaller-screen-sizes;
+                        padding-top: 4px;
+
+                        input[type="checkbox"] {
+                            -webkit-appearance: none;
+                            visibility: hidden;
+                            display: none;
+                        };
+        
+                        .check {
+                            position: relative;
+                            display: block;
+                            width: 40px;
+                            height: 20px;
+                            background: $toggle-checkbox-darkMode-backgroundColor;
+                            cursor: pointer;
+                            border-radius: 20px;
+                            overflow: hidden;
+                            transition: ease-in 0.5s
+                        };
+        
+                        input[type="checkbox"]:checked ~ .check {
+                            background: $input-type-checkbox-Checked;
+                        };
+        
+                        .check:before {
+                            content: "";
+                            position: absolute;
+                            top: 2px;
+                            left: 2px;
+                            background: $toggle-checkbox-lightMode-check-before-backgroundColor;
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 50%;
+                            transition: 0.5s
+                        };
+        
+                        input[type="checkbox"]:checked ~ .check:before {
+                            transform: translateX(20px)
+                        };
+        
+                        .check::after {
+                            content: "";
+                            position: absolute;
+                            top: 2px;
+                            left: 2px;
+                            background: $toggle-checkbox-darkMode-check-after-backgroundColor;
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 50%;
+                            transition: 0.5s;
+                            transform: translateX(-20px)
+                        };
+        
+                        input[type="checkbox"]:checked ~ .check::after {
+                            transform: translateX(20px)
+                        }
+                    };
+                };
+            };
+        };
+
+        .more-icon-dropDown-Menu-Card-false {
+            display: none;
+        };
+
+        .menu-content-container {
+            width: 100%;
+            height: calc(45% - 65px);
+            background: $sideBar-backgroundColor;
+            position: fixed;
+            top: -700px;
+            display: none;
+            // left: -300px;
+            transition: 300ms ease top;
+            flex-direction: column-reverse;
+            padding: 0;
+            border-bottom: 1px solid $navbar-and-sidebar-border-color;
+
+            &.active {
+                top: 65px; 
+                transition: 300ms ease top;
+                display: flex;
+            };
+
+            li {
+                height: 65px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                a {
+                    width: 100%;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $menu-content-container-a-text-color-for-smaller-screen-sizes;
+
+                };
+
+                a:hover{
+                    color: $menu-content-container-a-onHover-color-for-smaller-screen-sizes;
+                }
+            };
+
+            li:hover{
+                background-color: $menu-content-container-li-onHover-background-color-for-smaller-screen-sizes;
+                color: $menu-content-container-li-onHover-color-for-smaller-screen-sizes;
+                
+            };
+
+            ul {
+                flex-direction: column;
+                padding: 30px 0 0 0;
+
+
+                .settings-icon {
+                    display: none;
+                };
+
+                .settings-dropDown-Menu-Card-true {
+                    display: none;
+                };
+
+                .settings-dropDown-Menu-Card-false {
+                    display: none;
+                };
+            };
+
+            ul,li{
+                width: 100%;
+            }
+    
+        };
+    };
+};
+
+@media screen and (max-width: 400px) {
+    .Blog-Navigation {
+
+        .more-icon-dropDown-Menu-Card-true {
+            width: 80%;
+        };
+
+        // .menu-content-container {
+        //     width: 230px;
+        // }
+    };
+};
